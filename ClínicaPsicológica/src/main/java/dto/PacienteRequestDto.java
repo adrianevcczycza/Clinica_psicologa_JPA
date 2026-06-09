@@ -7,4 +7,9 @@ public record PacienteRequestDto(
     String telefone 
 ) {
 
+    public boolean existsByNome(String nome2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'existsByNome'");
+    }
+
 }

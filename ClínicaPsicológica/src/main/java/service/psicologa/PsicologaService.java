@@ -4,13 +4,12 @@ import java.util.List;
 
 import dto.PsicologaRequestDto;
 import dto.PsicologaResponseDto;
-import model.Psicologa;
 
 public interface PsicologaService {
 
     PsicologaResponseDto savePsicologa(PsicologaRequestDto psicologaRequestDto);
     PsicologaResponseDto buscarPsicologaPorId(Long id);
-    List<Psicologa>listarPsicologa();
-    PsicologaResponseDto atualizarPsicologa(Long id,PsicologaRequestDto psicologa);
+    List<PsicologaResponseDto>listarPsicologa();
+    PsicologaResponseDto atualizarPsicologa(Long id,PsicologaRequestDto psicpRequestDto);
     void deletarPsicologaPorId(Long id);
 }

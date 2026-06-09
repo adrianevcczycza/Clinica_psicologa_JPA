@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import model.Psicologa;
 
 @Repository
-public interface PsicologaRepository extends JpaRepository< Psicologa, Long>{
-
+public interface PsicologaRepository extends JpaRepository<Psicologa, Long>{
+    boolean existsByNome(String nome);
 }
