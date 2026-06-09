@@ -1,4 +1,4 @@
-package com.example.ClinicaPsicologica.model;
+package model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,32 +14,31 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table (name = "Psicologa")
+@Table (name = "Paciente")
 @Getter
 @Setter
 
-public class Psicologa {
+public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_psicologa", nullable = false)
+    @Column(name = "nome_paciente", nullable = false)
     private String nome;
 
-    @Column(name = "telefone_psicologa", nullable = false)
-    private String telefone;
-    
-    @Column(name = "especialidade_psicologa", nullable = false)
-    private String especialidade;
+    @Column(name = "idade_paciente", nullable = false)
+    private String idade;
 
-    @Column(name = "email_psicologa", nullable = false)
+    @Column(name = "email_paciente", nullable = false)
     private String email;
 
-    public Psicologa(String nome, String telefone, String especialidade, String email){
-        this.nome=nome;
-        this.telefone=telefone;
-        this.especialidade=especialidade;
-        this.email=email;
-    }
+    @Column(name = "telefone_paciente", nullable = false)
+    private String telefone;
 
+    public Paciente(String nome, String idade, String email, String telefone){
+        this.nome=nome;
+        this.idade=idade;
+        this.email=email;
+        this.telefone=telefone;
+    }
 }

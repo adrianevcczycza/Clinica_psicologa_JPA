@@ -1,4 +1,4 @@
-package com.example.ClinicaPsicologica.model;
+package model;
 
 
 import java.time.LocalDate;
@@ -25,9 +25,6 @@ public class Consulta {
     @GeneratedValue ( strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "data_consulta", nullable = false)
-    private LocalDate data;
-
     @Column (name = "Psicologa_consulta", nullable = false)
     private Psicologa psicologa;
 
@@ -36,11 +33,14 @@ public class Consulta {
 
     @Column (name = "Modalidade_consulta", nullable = false)
     private String modalidadeConsulta;
+    
+    @Column (name = "data_consulta", nullable = false)
+    private LocalDate data;
 
-    public Consulta (String modalidade, LocalDate data, Psicologa psicologa, Paciente paciente){
-        this.modalidadeConsulta= modalidade;
-        this.data= data;
+    public Consulta (Psicologa psicologa, Paciente paciente, String modalidade, LocalDate data){
         this.psicologa=psicologa;
         this.paciente=paciente;
+        this.modalidadeConsulta= modalidade;
+        this.data= data;
     }
 }
